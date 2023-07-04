@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2023-06-23T12:58:29.067Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="wOQcMw2VdahIeYEXsalX" version="21.5.0" type="google">
+  <diagram name="Página-1" id="3-r6OkWFoZsL-lhWM49S">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zlWeI8TM9WpWHfPoiRCw-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zlWeI8TM9WpWHfPoiRCw-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zlWeI8TM9WpWHfPoiRCw-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Inicio&lt;/font&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="364" y="40" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TblW0OoLFxKu5Tff3Axc-49" value="Fin" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="364" y="610" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-7" target="TblW0OoLFxKu5Tff3Axc-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-7" value="Base de datos" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="364" y="460" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-8" value="En la base de datos se guardaran los usuarios, sus partidas y la lista de palabras a utilizar en el wordle. En esta se verificara si los usuarios exiten o no y se sabra los datos de la partida de cada usuario&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="555" y="440" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-10" target="t-u0_VPg5tXcvT5JNyjs-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="516" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-10" value="back end" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="364" y="300" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-11" value="El back end recibirá&amp;nbsp; los pedidos, get, put, post y delete. Recibirá los datos que se ingresa en el login/registro o las letra que se ingresa en cada cuadro.&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="560" y="295" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-12" target="t-u0_VPg5tXcvT5JNyjs-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-12" value="Front end" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="364" y="120" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-14" value="Acá se encuentra todo el apartado que ve el usuario y las funciones que tiene que realizar para que el juego funcione (HTML, Java, CSS)" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-21" value="Recibirán los textos puesto en los distintos input del front end y realizara algunas funciones, en base a los datos obtenidos" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="120" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="t-u0_VPg5tXcvT5JNyjs-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t-u0_VPg5tXcvT5JNyjs-22" value="DOM" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="100" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
