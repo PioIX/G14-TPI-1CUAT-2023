@@ -73,7 +73,7 @@ app.put('/login', async function(req, res) {
     //Petición PUT con URL = "/login"
     console.log("Soy un pedido PUT", req.body); //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método PUT
     //Consulto en la bdd de la existencia del usuario
-    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Users WHERE User = "${req.body.user}" AND Password = "${req.body.pass}"`)
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Usuarios WHERE User = "${req.body.usuario}" AND Password = "${req.body.contraseña}"`)
     //Chequeo el largo del vector a ver si tiene datos
     if (respuesta.length > 0) {
         //Armo un objeto para responder
@@ -107,8 +107,6 @@ app.post('/registrer', function(req, res)
     console.log("Soy un pedido POST", req.body); 
     //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método POST
     //res.render('home', { mensaje: "Hola mundo!", usuario: req.body.usuario}); //Renderizo página "home" enviando un objeto de 2 parámetros a Handlebars
-    let user=[]
-    user.push(new Usuario(req.body.dni, req.body.nombre, req.body.usuario, req.body.contraseña))
     res.render('home', {usuario: req.body.usuario}); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
 app.get('/table', function(req, res)
