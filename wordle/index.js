@@ -13,7 +13,7 @@
 const express = require('express'); //Para el manejo del servidor Web
 const exphbs  = require('express-handlebars'); //Para el manejo de los HTML
 const bodyParser = require('body-parser'); //Para el manejo de los strings JSON
-const MySQL = require('./mysql'); //Añado el archivo mysql.js presente en la carpeta módulos
+const MySQL = require('modulos/mysql.js'); //Añado el archivo mysql.js presente en la carpeta módulos
 
 const app = express(); //Inicializo express para el manejo de las peticiones
 
@@ -42,16 +42,6 @@ app.listen(Listen_Port, function() {
     A PARTIR DE ESTE PUNTO GENERAREMOS NUESTRO CÓDIGO (PARA RECIBIR PETICIONES, MANEJO DB, ETC.)
     A PARTIR DE ESTE PUNTO GENERAREMOS NUESTRO CÓDIGO (PARA RECIBIR PETICIONES, MANEJO DB, ETC.)
 */
-
-class Usuario{
-    constructor(dni, nombre, usuario, contraseña) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.usuario = usuario;
-        this.contraseña = contraseña;
-    }
-}
-let users = []
 
 app.get('/', function(req, res)
 {
