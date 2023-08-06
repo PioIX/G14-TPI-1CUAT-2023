@@ -22,7 +22,7 @@ function changeScreen() {
         login.style.display = "none";
     }
 }
-/*
+
 var height = 6; //numero de intentos
 var width = 5; //letras de la palabra
 
@@ -111,7 +111,7 @@ function update() {
         }
     }
 }
-*/
+
 
 async function putJSON(data) {
     //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    

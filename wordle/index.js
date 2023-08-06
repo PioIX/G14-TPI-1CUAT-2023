@@ -54,12 +54,11 @@ app.get('/login', function(req, res)
 {
     //Petición GET con URL = "/login"
     console.log("Soy un pedido GET", req.query); 
-    let usuarios = MySQL.realizarQuery("SELECT * FROM Usuario")
+    let usuarios = MySQL.realizarQuery("SELECT * FROM Users")
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
     
     res.render('home', {vector: usuarios}); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
-
 
 app.post('/login', function(req, res)
 {
@@ -70,10 +69,21 @@ app.post('/login', function(req, res)
     res.render('home', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
 
-app.put('/login', function(req, res) {
+app.put('/login', async function(req, res) {
     //Petición PUT con URL = "/login"
     console.log("Soy un pedido PUT", req.body); //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método PUT
-    res.send(null);
+    //Consulto en la bdd de la existencia del usuario
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Users WHERE User = "${req.body.user}" AND Password = "${req.body.pass}"`)
+    //Chequeo el largo del vector a ver si tiene datos
+    if (respuesta.length > 0) {
+        //Armo un objeto para responder
+        res.send({validar: true})    
+    }
+    else{
+        res.send({validar:false})    
+    }
+    
+    
 });
 
 app.delete('/login', function(req, res) {
