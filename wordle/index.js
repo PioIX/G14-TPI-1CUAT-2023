@@ -73,7 +73,7 @@ app.put('/login', async function(req, res) {
     //Petición PUT con URL = "/login"
     console.log("Soy un pedido PUT", req.body); //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método PUT
     //Consulto en la bdd de la existencia del usuario
-    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Usuarios WHERE User = "${req.body.usuario}" AND Password = "${req.body.contraseña}"`)
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Usuario WHERE User = "${req.usuario}" AND Password = "${req.contraseña}"`)
     //Chequeo el largo del vector a ver si tiene datos
     if (respuesta.length > 0) {
         //Armo un objeto para responder
