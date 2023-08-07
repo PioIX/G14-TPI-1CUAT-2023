@@ -13,7 +13,7 @@
 const express = require('express'); //Para el manejo del servidor Web
 const exphbs  = require('express-handlebars'); //Para el manejo de los HTML
 const bodyParser = require('body-parser'); //Para el manejo de los strings JSON
-const MySQL = require('modulos/mysql.js'); //Añado el archivo mysql.js presente en la carpeta módulos
+const MySQL = require('./modulos/mysql.js'); //Añado el archivo mysql.js presente en la carpeta módulos
 
 const app = express(); //Inicializo express para el manejo de las peticiones
 
