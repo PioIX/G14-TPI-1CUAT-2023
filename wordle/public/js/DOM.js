@@ -30,7 +30,7 @@ async function putJSON(data) {
 
     try {
       const response = await fetch("/login", {
-        method: "PUT", // or 'PUT'
+        method: "PUT", // or 'POST'
         headers: {
           "Content-Type": "application/json",
         },
@@ -69,3 +69,4 @@ async function putJSON(data) {
     //data es el objeto que le paso al back
     putJSON(data)
   }
+

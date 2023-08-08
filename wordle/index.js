@@ -101,17 +101,18 @@ app.get('/registrer', function(req, res)
 });
 
 
-app.post('/registrer', function(req, res)
+app.post('/registrer', async function(req, res)
 {
-    //Petición POST con URL = "/login"
     console.log("Soy un pedido POST", req.body); 
     //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método POST
-    //res.render('home', { mensaje: "Hola mundo!", usuario: req.body.usuario}); //Renderizo página "home" enviando un objeto de 2 parámetros a Handlebars
-    res.render('home', {usuario: req.body.usuario}); //Renderizo página "home" sin pasar ningún objeto a Handlebars
-});
-app.get('/table', function(req, res)
-{
-    //Petición GET con URL = "/login"
-    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('table', {user:users}); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+    let respuesta = await MySQL.realizarQuery(`INSERT INTO Usuario (Usuario, Contraseña, Nombre, Apellido) VALUES (') `)
+    //Chequeo el largo del vector a ver si tiene datos
+    if (respuesta.length > 0) {
+        //Armo un objeto para responder
+        res.send({validar: true})    
+    }
+    else{
+        res.send({validar:false})    
+    }//res.render('home', { mensaje: "Hola mundo!", usuario: req.body.usuario}); //Renderizo página "home" enviando un objeto de 2 parámetros a Handlebars
+   //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
