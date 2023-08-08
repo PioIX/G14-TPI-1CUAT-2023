@@ -15,12 +15,17 @@
     border-style: solid;
     border-color:rgb(69, 82, 68);
     font-size: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-body{
+.body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: #6aaa64;
+    background-image: url('https://fondosmil.com/fondo/31827.jpg');
 }
 
 
