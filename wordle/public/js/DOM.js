@@ -23,8 +23,6 @@ function changeScreen() {
     }
 }
 
-var height = 6; //numero de intentos
-var width = 5; //letras de la palabra
 
 var row = 0; //current guest (attempt #)
 var col = 0; //current letter for that attempt
