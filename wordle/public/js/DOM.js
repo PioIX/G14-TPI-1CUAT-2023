@@ -70,12 +70,12 @@ async function putJSON(data) {
     putJSON(data)
   }
 
-  async function putJSON(data) {
+  async function putJSON2(data) {
     //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
     try {
-      const response = await fetch("/login", {
-        method: "PUT", // or 'POST'
+      const response = await fetch("/registrer", {
+        method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
         },
@@ -91,7 +91,7 @@ async function putJSON(data) {
       } else {
         //Envio el formularia desde dom para cambiar de pagina
         //Podria usar tambien un changeScreen()
-        document.getElementById("form1").submit()
+        document.getElementById("form2").submit()
       }
 
     } catch (error) {
@@ -100,17 +100,25 @@ async function putJSON(data) {
   }
 
   //Esta funcion la llama el boton Ingresar que tiene que ser type button para ejecutar el onclick
-  function login() {
+  function registro() {
     //Leo los datos del input
-    let usuario = document.getElementById("usuarioId").value
-    let contraseña = document.getElementById("passwordId").value
+    let DNI = document.getElementById("dni").value
+    let Nombre = document.getElementById("nombre").value
+    let Apellido = document.getElementById("apellido").value
+    let Usuario = document.getElementById("usuario").value
+    let Password = document.getElementById("password").value
+
 
     //Creo un objeto de forma instantanea
     let data = {
-        user: usuario,
-        pass: contraseña
+        dni: DNI,
+        nombre: Nombre,
+        apellido: Apellido,
+        user: Usuario,
+        pass: Password
     }
 
     //data es el objeto que le paso al back
-    putJSON(data)
+    putJSON2(data)
+    changeScreen()
   }

@@ -1,6 +1,6 @@
 
 <div class="regist">
-    <form action="/registrer" method="POST" class="container-sm">
+    <form action="/registrer" method="POST" id="form2" class="container-sm">
         <div class="mb-3 form-group">
             <h2>Pagina de registro</h2>
         </div>
@@ -21,11 +21,11 @@
             <input type="text" class="form-control" id="usuario" name="usuario" value="" placeholder="Ingrese un usaurio">
         </div>
         <div class="mb-3 form-group">
-            <label for="passwordId" class="form-label">Password</label>
+            <label for="passwordId" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="password" name="password" value="" placeholder="Ingrese una Contraseña">
         </div>
             <div class="mb-3 form-check">
-            <input type="submit" class="btn btn-primary" value="Crear cuenta">
+            <input type="button" class="btn btn-primary" onclick="registro()" value="Crear cuenta">
         </div>
 
     </form>

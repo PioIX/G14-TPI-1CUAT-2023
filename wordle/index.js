@@ -106,7 +106,7 @@ app.post('/registrer', async function(req, res)
     console.log("Soy un pedido POST", req.body); 
     //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método POST
     //res.render('home', { mensaje: "Hola mundo!", usuario: req.body.usuario}); //Renderizo página "home" enviando un objeto de 2 parámetros a Handlebars
-let respuesta = await MySQL.realizarQuery(`INSERT INTO Usuario (Usuario, Contraseña, Nombre, Apellido) VALUES (') `)
+let respuesta = await MySQL.realizarQuery(`INSERT INTO Usuario (DNI, Usuario, Contraseña, Nombre, Apellido) VALUES ('dni, user, pass, nombre, apellido') `)
 
     //Chequeo el largo del vector a ver si tiene datos
     if (respuesta.length > 0) {
