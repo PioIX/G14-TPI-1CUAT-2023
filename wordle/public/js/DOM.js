@@ -120,5 +120,4 @@ async function putJSON(data) {
 
     //data es el objeto que le paso al back
     putJSON2(data)
-    changeScreen()
   }
