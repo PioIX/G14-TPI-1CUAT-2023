@@ -68,9 +68,10 @@ async function putJSON(data) {
 
     //data es el objeto que le paso al back
     putJSON(data)
-  }
+}
 
-  async function putJSON2(data) {
+  
+async function putJSON2(data) {
     //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
     try {
