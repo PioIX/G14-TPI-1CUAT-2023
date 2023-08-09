@@ -10,6 +10,7 @@ function getName() {
 function getDni() {
     return document.getElementById("dni").value;
 }
+
 function changeScreen() {
     const notepad = document.getElementById("notepad");
     const login = document.getElementById("login");
@@ -68,45 +69,46 @@ async function putJSON(data) {
 
     //data es el objeto que le paso al back
     putJSON(data)
-  }
 
-  async function putJSON2(data) {
-    //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
+}
 
-    try {
-      const response = await fetch("/registrer", {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      
-      //En result obtengo la respuesta
-      const result = await response.json();
-      console.log("Success:", result);
+async function putJSON2(data) {
+  //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
-      if (result.validar == false) {
-        alert("Los datos son incorrectos")
-      } else {
-        //Envio el formularia desde dom para cambiar de pagina
-        //Podria usar tambien un changeScreen()
-        document.getElementById("form2").submit()
-      }
+  try {
+    const response = await fetch("/registrer", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    //En result obtengo la respuesta
+    const result = await response.json();
+    console.log("Success:", result);
 
-    } catch (error) {
-      console.error("Error:", error);
+    if (result.validar == false) {
+      alert("Los datos son incorrectos")
+    } else {
+      //Envio el formularia desde dom para cambiar de pagina
+      //Podria usar tambien un changeScreen()
+      document.getElementById("form2").submit()
     }
+
+  } catch (error) {
+    console.error("Error:", error);
   }
+}
 
   //Esta funcion la llama el boton Ingresar que tiene que ser type button para ejecutar el onclick
   function registro() {
     //Leo los datos del input
-    let DNI = document.getElementById("dni").value
-    let Nombre = document.getElementById("nombre").value
-    let Apellido = document.getElementById("apellido").value
-    let Usuario = document.getElementById("usuario").value
-    let Password = document.getElementById("password").value
+    let DNI = document.getElementById("dniR").value
+    let Nombre = document.getElementById("nombreR").value
+    let Apellido = document.getElementById("apellidoR").value
+    let Usuario = document.getElementById("usuarioR").value
+    let Password = document.getElementById("passwordR").value
 
 
     //Creo un objeto de forma instantanea
@@ -119,5 +121,5 @@ async function putJSON(data) {
     }
 
     //data es el objeto que le paso al back
-    putJSON2(data)
+    putJSON2(data);
   }
