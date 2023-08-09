@@ -100,6 +100,15 @@ app.get('/registrer', function(req, res)
     res.render('registrer', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
 
+app.get('/admin', function(req, res)
+{
+    //Petición GET con URL = "/login"
+    console.log("Soy un pedido GET", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('admin', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+});
+
+
 
 app.post('/registrer', async function(req, res)
 {
