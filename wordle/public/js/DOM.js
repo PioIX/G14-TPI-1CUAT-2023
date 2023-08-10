@@ -76,7 +76,7 @@ async function putJSON2(data) {
   //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
   try {
-    const response = await fetch("/registrer", {
+    const responseR = await fetch("/registrer", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -85,10 +85,10 @@ async function putJSON2(data) {
     });
     
     //En result obtengo la respuesta
-    const result = await response.json();
-    console.log("Success:", result);
+    const result2 = await responseR.json();
+    console.log("Success:", result2);
 
-    if (result.validar == false) {
+    if (result2.validar == false) {
       alert("Los datos son incorrectos")
     } else {
       //Envio el formularia desde dom para cambiar de pagina
@@ -114,10 +114,10 @@ async function putJSON2(data) {
     //Creo un objeto de forma instantanea
     let data = {
         dni: DNI,
-        nombre: Nombre,
-        apellido: Apellido,
         user: Usuario,
-        pass: Password
+        pass: Password,
+        nombre: Nombre,
+        apellido: Apellido
     }
 
     //data es el objeto que le paso al back

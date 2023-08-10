@@ -125,8 +125,9 @@ app.post('/registrer', async function(req, res)
     else{
         res.send({validar:false})    
     }
-}
-);
+});
+
+
      //Renderizo página "home" sin pasar ningún objeto a Handlebars
 
 
