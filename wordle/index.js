@@ -100,6 +100,15 @@ app.get('/registrer', function(req, res)
     res.render('registrer', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
 
+app.post('/registrero', function(req, res)
+{
+    //Petición GET con URL = "/login"
+    console.log("Soy un pedido GET", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('home', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+});
+
+
 app.get('/admin', function(req, res)
 {
     //Petición GET con URL = "/login"
@@ -115,13 +124,13 @@ app.post('/registrer', async function(req, res)
     console.log("Soy un pedido POST", req.body); 
     //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método POST
     //res.render('home', { mensaje: "Hola mundo!", usuario: req.body.usuario}); //Renderizo página "home" enviando un objeto de 2 parámetros a Handlebars
-    await MySQL.realizarQuery(`INSERT INTO Usuario (DNI, Usuario, Contraseña, Nombre, Apellido) VALUES (${req.body.dni}, '${req.body.user}','${req.body.pass}' , '${req.body.nombre}', '${req.body.apellido}') `)
+    await MySQL.realizarQuery(`INSERT INTO Usuario (DNI, Usuario, Contraseña, Nombre, Apellido) VALUES (${req.body.dni}, '${req.body.user}','${req.body.pass}', '${req.body.nombre}', '${req.body.apellido}') `)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Usuario WHERE dni = ${req.body.dni}`)
     //Chequeo el largo del vector a ver si tiene datos
     if (respuesta.length > 0) {
         //Armo un objeto para responder
         res.send({validar: true})
-            
+
     }
     else{
         res.send({validar:false})    

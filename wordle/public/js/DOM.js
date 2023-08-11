@@ -121,5 +121,5 @@ async function putJSON2(data) {
     }
 
     //data es el objeto que le paso al back
-    putJSON2(data);
+    putJSON2(data)
   }
