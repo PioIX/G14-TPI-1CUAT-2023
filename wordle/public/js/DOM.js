@@ -74,7 +74,7 @@ async function putJSON(data) {
 
 async function putJSON2(data) {
   //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
-
+  console.log(data);
   try {
     const responseR = await fetch("/registrer", {
       method: "POST", // or 'PUT'
