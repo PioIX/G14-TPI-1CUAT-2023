@@ -4,14 +4,25 @@
         <h2>Añadir palabra</h2>
     </div>
     <div class="mb-3 form-group">
-        <button type="button" class="btn btn-primary" onclick="changeScreenAñadir()">Añadir palabra</button>
-    </div>
-    <div class="mb-3 form-group">
-         <button type="button" class="btn btn-primary">Editar palabra</button>
-    </div>
+            <label for="idañadir" class="form-label">ID de la palabra</label>
+            <input type="text" class="form-control" id="idañadirpalabra" name="editarpalabra" value="" placeholder="Ingrese el ID de la palabra">
+        </div>
         <div class="mb-3 form-group">
-        <button type="button" class="btn btn-primary">Eliminar palabra</button>
-    </div>
-
+            <label for="palabraañadir" class="form-label">Palabra</label>
+            <input type="text" class="form-control" id="añadirpalabra" name="añadirpalabra" value="" placeholder="Ingrese la palabra">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="cantidadDeLetras" class="form-label">Cantidad de letras</label>
+            <select name="cantidadDeLetras" id="selectcant">
+            <option value = 4>4</option>
+            <option value = 5>5</option>
+            <option value = 6>6</option>
+            <option value = 7>7</option>
+            </select>
+        </div>
+    <div class="mb-3 form-group">
+            <input type="button" class="btn btn-primary" onclick="añadir()" value="Añadir palabra">
+        </div>
+    
 </form>
 </div>

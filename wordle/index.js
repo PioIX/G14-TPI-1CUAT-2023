@@ -121,7 +121,29 @@ app.get('/admin', function(req, res)
     res.render('admin', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 });
 
+app.post('/admin', function(req, res)
+{
+    console.log("Soy un pedido POST", req.query);
+    res.render('añadir', null);
+}
+)
 
+app.put('/añadir', async function(req, res)
+{
+    console.log("Soy un pedido PUT", req.body)
+    await MySQL.realizarQuery(`INSERT INTO Palabras (ID_palabras, Palabras, cant_letras) VALUES (${req.body.idPalabra}, '${req.body.palabra}','${req.body.cantidad}') `)
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE ID_palabras = ${req.body.idPalabra}`);
+
+    //Chequeo el largo del vector a ver si tiene datos
+    if (respuesta.length > 0) {
+        //Armo un objeto para responder
+        res.send({validar: true})
+
+    }
+    else{
+        res.send({validar:false})    
+    }
+});
 
 app.post('/registrer', async function(req, res)
 {
