@@ -1,0 +1,28 @@
+<div class="editar">
+<form action="/editar" method="POST" id="añadir" class="container-sm">
+    <div class="mb-3 form-group">
+        <h2>Editar palabra</h2>
+    </div>
+    <div class="mb-3 form-group">
+            <label for="ideditar" class="form-label">Buscar palabra por ID</label>
+            <input type="text" class="form-control" id="ideditarpalabra" name="editarpalabra" value="" placeholder="">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="palabraañadir" class="form-label">Nueva Palabra</label>
+            <input type="text" class="form-control" id="nuevapalabra" name="nuevapalabra" value="" placeholder="Ingrese la nueva palabra">
+        </div>
+        <div class="mb-3 form-group">
+            <label for="cantidadDeLetras" class="form-label">Cantidad de letras</label>
+            <select name="cantidadDeLetras" id="selectcant">
+            <option value = 4>4</option>
+            <option value = 5>5</option>
+            <option value = 6>6</option>
+            <option value = 7>7</option>
+            </select>
+        </div>
+    <div class="mb-3 form-group">
+            <input type="button" class="btn btn-primary" onclick="añadir()" value="Editar palabra">
+        </div>
+    
+</form>
+</div>

@@ -74,9 +74,9 @@ app.put('/login', async function(req, res) {
     console.log("Soy un pedido PUT", req.body); //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método PUT
     //Consulto en la bdd de la existencia del usuario
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Usuario WHERE Usuario = "${req.body.user}" AND Contraseña = "${req.body.pass}"`)
-    let usuarioadmin = await MySQL.realizarQuery(`SELECT * FROM Usuario WHERE Usuario = "${req.body.user}" AND Contraseña = "${req.body.pass}" AND admin = 1`)
+    let usuarioadmin = await MySQL.realizarQuery(`SELECT admin FROM Usuario WHERE Usuario = "${req.body.user}" AND Contraseña = "${req.body.pass}"`)
     //Chequeo el largo del vector a ver si tiene datos
-    if (usuarioadmin.length == 0) {
+    if (usuarioadmin == 1) {
         if (respuesta.length > 0) {
             //Armo un objeto para responder
              res.send({validar: true})    
@@ -123,14 +123,21 @@ app.get('/admin', function(req, res)
 
 app.post('/admin', function(req, res)
 {
+    let añadir = document.getElementById("new").value
+    let editar =document.getElementById("edit").value
+    if (añadir.length > 0 ) {
     console.log("Soy un pedido POST", req.query);
     res.render('añadir', null);
-}
-)
+    } else if (editar.length > 0) {
+    console.log("Soy un pedido POST", req.query);
+    res.render('añadir', null);
+    }
+})
 
-app.put('/añadir', async function(req, res)
+
+app.post('/añadir', async function(req, res)
 {
-    console.log("Soy un pedido PUT", req.body)
+    console.log("Soy un pedido POSTT", req.body)
     await MySQL.realizarQuery(`INSERT INTO Palabras (ID_palabras, Palabras, cant_letras) VALUES (${req.body.idPalabra}, '${req.body.palabra}','${req.body.cantidad}') `)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE ID_palabras = ${req.body.idPalabra}`);
 

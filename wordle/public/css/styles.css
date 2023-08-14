@@ -76,8 +76,8 @@
     .tile{
         /*box*/
         border: 2px solid lightgray;
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         margin: 2.5px;
         background-color: white;
         text-align: center;

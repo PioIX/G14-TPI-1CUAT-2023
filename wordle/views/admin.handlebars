@@ -6,12 +6,14 @@
     </div>
    <form action="/añadir" method="POST" class="container-sm">
         <div class="mb-3 form-check">
-            <input type="submit" class="btn btn-primary" value="Añadir palabra">
+            <input type="submit" class="btn btn-primary" id="new" value="Añadir palabra">
         </div>
     </form>
-    <div class="mb-3 form-group">
-         <button type="button" class="btn btn-primary">Editar palabra</button>
-    </div>
+    <form action="/editar" method="POST" class="container-sm">
+        <div class="mb-3 form-check">
+            <input type="submit" class="btn btn-primary" id="edit" value="Editar palabra">
+        </div>
+    </form>
         <div class="mb-3 form-group">
         <button type="button" class="btn btn-primary">Eliminar palabra</button>
     </div>
