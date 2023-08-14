@@ -11,9 +11,9 @@ function getDni() {
     return document.getElementById("dni").value;
 }
 
-function changeScreen() {
-    const notepad = document.getElementById("notepad");
-    const login = document.getElementById("login");
+function changeScreenAñadir() {
+    const notepad = document.getElementById("añadir");
+    const login = document.getElementById("form3");
     if(notepad.style.display !== "none") {
         notepad.style.display = "none";
         login.style.display = "";
@@ -123,3 +123,4 @@ async function putJSON2(data) {
     //data es el objeto que le paso al back
     putJSON2(data)
   }
+
