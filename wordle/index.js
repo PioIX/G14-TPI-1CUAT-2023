@@ -77,16 +77,17 @@ app.put('/login', async function(req, res) {
     let usuarioadmin = await MySQL.realizarQuery(`SELECT admin FROM Usuario WHERE Usuario = "${req.body.user}" AND Contraseña = "${req.body.pass}"`)
     //Chequeo el largo del vector a ver si tiene datos
     if (usuarioadmin == 1) {
-        if (respuesta.length > 0) {
-            //Armo un objeto para responder
-             res.send({validar: true})    
-        }
-        else{
-            res.send({validar: false})
-        }
+        res.send({validar: -1})
+    }
+    else {
+        res.send({validar: 0})
+    }
+    if (respuesta.length > 0) {
+        //Armo un objeto para responder
+         res.send({validar: 1})    
     }
     else{
-        res.send({validar: false})
+        res.send({validar: 0})
     }
 });
 
@@ -137,7 +138,7 @@ app.post('/admin', function(req, res)
 
 app.post('/añadir', async function(req, res)
 {
-    console.log("Soy un pedido POSTT", req.body)
+    console.log("Soy un pedido POST", req.body)
     await MySQL.realizarQuery(`INSERT INTO Palabras (ID_palabras, Palabras, cant_letras) VALUES (${req.body.idPalabra}, '${req.body.palabra}','${req.body.cantidad}') `)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE ID_palabras = ${req.body.idPalabra}`);
 
