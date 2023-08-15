@@ -11,15 +11,15 @@ function getDni() {
     return document.getElementById("dni").value;
 }
 
-function changeScreenAñadir() {
-    const notepad = document.getElementById("añadir");
-    const login = document.getElementById("form3");
-    if(notepad.style.display !== "none") {
-        notepad.style.display = "none";
+function changeScreenadmin() {
+    const admin = document.getElementById("admin");
+    const login = document.getElementById("login");
+    if(admin.style.display !== "none") {
+        admin.style.display = "none";
         login.style.display = "";
     }
     else {
-        notepad.style.display = "";
+        admin.style.display = "";
         login.style.display = "none";
     }
 }
@@ -42,28 +42,12 @@ async function putJSON(data) {
       const result = await response.json();
       console.log("Success:", result);
 
-      if (result.validar == 1) {
-        const notepad = document.getElementById("notepad");
-        const login = document.getElementById("form1");
-        if(notepad.style.display !== "none") {
-          notepad.style.display = "none";
-          login.style.display = "";
-        }
-        else {
-          notepad.style.display = "";
-          login.style.display = "none";
-        }
-      } else if (result.validar == -1) {
-        const admin = document.getElementById("admin");
-        const login = document.getElementById("form1");
-        if(admin.style.display !== "none") {
-          admin.style.display = "none";
-          login.style.display = "";
-        }
-        else {
-          admin.style.display = "";
-          login.style.display = "none";
-        }
+      if (result.validar == -1) {
+        changeScreenadmin()
+      } else if (result.validar == 1) {
+        //Envio el formularia desde dom para cambiar de pagina
+        //Podria usar tambien un changeScreen()
+        document.getElementById("form1").submit()
       } else {
         alert("Los datos son incorrectos")
       }
@@ -146,7 +130,7 @@ async function putJSON2(data) {
     //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
     try {
-      const responseAÑ = await fetch("/añadir", {
+      const responseAD = await fetch("/add", {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
@@ -155,15 +139,15 @@ async function putJSON2(data) {
       });
       
       //En result obtengo la respuesta
-      const resultAÑ = await responseAÑ.json();
-      console.log("Success:", resultAÑ);
+      const resultAD = await responseAD.json();
+      console.log("Success:", resultAD);
 
-      if (resultAÑ.validar == false) {
+      if (resultAD.validar == false) {
         alert("Los datos son incorrectos")
       } else {
         //Envio el formularia desde dom para cambiar de pagina
         //Podria usar tambien un changeScreen()
-        document.getElementById("form3").submit()
+        document.getElementById("add").submit()
       }
 
     } catch (error) {
@@ -172,14 +156,14 @@ async function putJSON2(data) {
   }
 
   //Esta funcion la llama el boton Ingresar que tiene que ser type button para ejecutar el onclick
-  function añadir() {
+  function add() {
     //Leo los datos del input
-    let idPalabra = document.getElementById("idañadirpalabra").value
-    let Palabra = document.getElementById("añadirpalabra").value
-    let Cantidad = document.getElementById("selectcant").value
+    let idPalabra = document.getElementById("idaddrpalabra").value
+    let Palabra = document.getElementById("addpalabra").value
+    let Cantidad = document.getElementById("cantletras").value
     //Creo un objeto de forma instantanea
     let data = {
-      idPalabra: idPalabra,
+      idword: idPalabra,
       palabra: Palabra,
       cantidad: Cantidad
     }

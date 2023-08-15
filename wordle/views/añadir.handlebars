@@ -1,27 +1,22 @@
-<div class="añadir">
-<form action="/añadir" method="POST" id="añadir" class="container-sm">
+<div class="add">
+<form action="/add" method="POST" id="añadir" class="container-sm">
     <div class="mb-3 form-group">
         <h2>Añadir palabra</h2>
     </div>
     <div class="mb-3 form-group">
-            <label for="idañadir" class="form-label">ID de la palabra</label>
-            <input type="text" class="form-control" id="idañadirpalabra" name="editarpalabra" value="" placeholder="Ingrese el ID de la palabra">
+            <label for="idadd" class="form-label">ID de la palabra</label>
+            <input type="text" class="form-control" id="idaddpalabra" name="editarpalabra" value="" placeholder="Ingrese el ID de la palabra">
         </div>
         <div class="mb-3 form-group">
-            <label for="palabraañadir" class="form-label">Palabra</label>
-            <input type="text" class="form-control" id="añadirpalabra" name="añadirpalabra" value="" placeholder="Ingrese la palabra">
+            <label for="palabraadd" class="form-label">Palabra</label>
+            <input type="text" class="form-control" id="addpalabra" name="addpalabra" value="" placeholder="Ingrese la palabra">
         </div>
         <div class="mb-3 form-group">
             <label for="cantidadDeLetras" class="form-label">Cantidad de letras</label>
-            <select name="cantidadDeLetras" id="selectcant">
-            <option value = 4>4</option>
-            <option value = 5>5</option>
-            <option value = 6>6</option>
-            <option value = 7>7</option>
-            </select>
+            <input type="text" class="form-control" id="cantletras" name="cantletras" value="" placeholder="Ingrese la cantidad de letras">
         </div>
     <div class="mb-3 form-group">
-            <input type="button" class="btn btn-primary" onclick="añadir()" value="Añadir palabra">
+            <input type="button" class="btn btn-primary" onclick="add()" value="Añadir palabra">
         </div>
     
 </form>
