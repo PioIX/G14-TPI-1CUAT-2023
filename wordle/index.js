@@ -125,6 +125,18 @@ app.post('/admin', function(req, res)
     res.render('add', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
+app.post('/admin', function(req, res)
+{
+    console.log("Soy un pedido POST", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('editar', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+})
+
+app.get('/admin', function(req, res) {
+    //Petición DELETE con URL = "/login"
+    console.log("Soy un pedido DELETE", req.body); //En req.body vamos a obtener el objeto con los parámetros enviados desde el frontend por método DELETE
+    res.render('delete', null);
+});
 
 app.post('/add', async function(req, res)
 {
@@ -144,6 +156,54 @@ app.post('/add', async function(req, res)
 });
 
 app.post('/addd', function(req, res)
+{
+    console.log("Soy un pedido POST", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('login', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+})
+
+app.post('/editar', async function(req, res)
+{
+    console.log("Soy un pedido POST", req.body)
+    await MySQL.realizarQuery(`UPDATE Palabras SET ('${req.body.palabra}', ${req.body.cantidad}) = ('${req.body.newpalabra}', ${req.body.newcantidad}) WHERE id_palabras = ${req.body.newidword})`)
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.newidword}`);
+
+    //Chequeo el largo del vector a ver si tiene datos
+    if (respuesta.length > 0) {
+        //Armo un objeto para responder
+        res.send({validar: true})
+
+    }
+    else{
+        res.send({validar:false})    
+    }
+});
+
+app.post('/edit', function(req, res)
+{
+    console.log("Soy un pedido POST", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('login', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+})
+
+app.post('/delete', async function(req, res)
+{
+    console.log("Soy un pedido POST", req.body)
+    await MySQL.realizarQuery(`DELETE FROM Palabras WHERE id_palabras = ${req.body.deleteidword})`)
+    let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.deleteidword}`);
+
+    //Chequeo el largo del vector a ver si tiene datos
+    if (respuesta.length == 0) {
+        //Armo un objeto para responder
+        res.send({validar: true})
+
+    }
+    else{
+        res.send({validar:false})    
+    }
+});
+
+app.post('/deletee', function(req, res)
 {
     console.log("Soy un pedido POST", req.query); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET

@@ -1,11 +1,21 @@
 <div class="editar">
-<form action="/editar" method="POST" id="añadir" class="container-sm">
+<form action="/edit" method="POST" id="editar" class="container-sm">
     <div class="mb-3 form-group">
         <h2>Editar palabra</h2>
     </div>
     <div class="mb-3 form-group">
-            <label for="ideditar" class="form-label">Buscar palabra por ID</label>
-            <input type="text" class="form-control" id="ideditarpalabra" name="editarpalabra" value="" placeholder="">
+                    <h3>Burcar palabara para editar</h3>                    
+                    <div class="form-group">
+                        <label for="searchByContent">Buscar palabra</label>
+                        <input class="form-control" type="text" id="searchword" onkeyup="searchWord()">
+                    </div>
+                    <div id="divTabla">
+
+                    </div>
+                </div>
+         <div class="mb-3 form-group">
+            <label for="idadd" class="form-label">ID de la palabra</label>
+            <input type="text" class="form-control" id="idnewpalabra" name="editarpalabra" value="" placeholder="Ingrese el ID de la palabra">
         </div>
         <div class="mb-3 form-group">
             <label for="palabraañadir" class="form-label">Nueva Palabra</label>
@@ -13,7 +23,7 @@
         </div>
         <div class="mb-3 form-group">
             <label for="cantidadDeLetras" class="form-label">Cantidad de letras</label>
-            <select name="cantidadDeLetras" id="selectcant">
+            <select name="cantidadDeLetras" id="Newselectcant">
             <option value = 4>4</option>
             <option value = 5>5</option>
             <option value = 6>6</option>

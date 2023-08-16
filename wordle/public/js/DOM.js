@@ -173,3 +173,122 @@ async function putJSON2(data) {
 
 } 
 
+function searchWord(){
+  let searchword = document.getElementById("searchword").value
+  let divTabla = document.getElementById("divTabla")
+  let stringTable = "";
+  stringTable+= `
+      <table class="table">
+          <thead>
+              <tr>
+              <th scope="col">Id de la palabra</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Cantidad de letras</th>
+              </tr>
+          </thead>
+          <tbody id="listar">`
+  if (searchword.length >= 3) {
+      for (let i = 0; i < Palabras.length; i++){
+          const element = Palabras[i];
+          let idString = element.Palabras.toString()
+          if (idString.includes(searchword) || element.cant_letras.includes(searchword)){
+              stringTable+=`
+              <tr>
+              <th scope="row">${Palabras[i].id_palabras}</th>
+              <td>${Palabras[i].Palabras}</td>
+              <td>${Palabras[i].cant_letras}</td>
+              </tr>
+          `    
+          }
+      }
+      divTabla.innerHTML = stringTable + "</tbody> </table>"   
+  }
+}
+
+async function putJSON4(data) {
+  //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
+
+  try {
+    const responseNEW = await fetch("/edit", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    //En result obtengo la respuesta
+    const resultNEW = await responseNEW.json();
+    console.log("Success:", resultNEW);
+
+    if (resultNEW.validar == false) {
+      alert("Los datos son incorrectos")
+    } else {
+      //Envio el formularia desde dom para cambiar de pagina
+      //Podria usar tambien un changeScreen()
+      document.getElementById("editar").submit()
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+function edit() {
+  //Leo los datos del input
+  let idPalabraN = document.getElementById("idnewpalabra").value
+  let PalabraN = document.getElementById("nuevapalabra").value
+  let CantidadN = document.getElementById("NEWselectcant").value
+  //Creo un objeto de forma instantanea
+  let data = {
+    newidword: idPalabraN,
+    newpalabra: PalabraN,
+    newcantidad: CantidadN
+  }
+
+  //data es el objeto que le paso al back
+  putJSON4(data)
+
+} 
+
+async function putJSON5(data) {
+  //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
+
+  try {
+    const responseNEW = await fetch("/delete", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    //En result obtengo la respuesta
+    const resultDEL = await responseDEL.json();
+    console.log("Success:", resultDEL);
+
+    if (resultDEL.validar == false) {
+      alert("Los datos son incorrectos")
+    } else {
+      //Envio el formularia desde dom para cambiar de pagina
+      //Podria usar tambien un changeScreen()
+      document.getElementById("delete").submit()
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+function edit() {
+  //Leo los datos del input
+  let idPalabraDEL = document.getElementById("iddeletepalabra").value
+  //Creo un objeto de forma instantanea
+  let data = {
+    deleteidword: idPalabraDEL
+  }
+
+  //data es el objeto que le paso al back
+  putJSON5(data)
+
+} 
