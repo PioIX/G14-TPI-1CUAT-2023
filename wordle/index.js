@@ -122,14 +122,14 @@ app.post('/admin', function(req, res)
 {
     console.log("Soy un pedido POST", req.query); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('añadir', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+    res.render('add', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
 
-app.post('/añadir', async function(req, res)
+app.post('/add', async function(req, res)
 {
     console.log("Soy un pedido POST", req.body)
-    await MySQL.realizarQuery(`INSERT INTO Palabras (id_palabras, Palabras, cant_letras) VALUES (${req.body.idword}, '${req.body.palabra}',${req.body.cantidad}) `)
+    await MySQL.realizarQuery(`INSERT INTO Palabras (id_palabras, Palabras, cant_letras) VALUES (${req.body.idword}, '${req.body.palabra}', ${req.body.cantidad}) `)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.idword}`);
 
     //Chequeo el largo del vector a ver si tiene datos
@@ -143,11 +143,11 @@ app.post('/añadir', async function(req, res)
     }
 });
 
-app.post('/add', function(req, res)
+app.post('/addd', function(req, res)
 {
     console.log("Soy un pedido POST", req.query); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('admin', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+    res.render('login', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
 app.post('/registrer', async function(req, res)

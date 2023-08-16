@@ -158,7 +158,7 @@ async function putJSON2(data) {
   //Esta funcion la llama el boton Ingresar que tiene que ser type button para ejecutar el onclick
   function add() {
     //Leo los datos del input
-    let idPalabra = document.getElementById("idaddrpalabra").value
+    let idPalabra = document.getElementById("idaddpalabra").value
     let Palabra = document.getElementById("addpalabra").value
     let Cantidad = document.getElementById("cantletras").value
     //Creo un objeto de forma instantanea

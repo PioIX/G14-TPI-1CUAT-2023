@@ -1,5 +1,5 @@
 <div class="add">
-<form action="/add" method="POST" id="añadir" class="container-sm">
+<form action="/addd" method="POST" id="add" class="container-sm">
     <div class="mb-3 form-group">
         <h2>Añadir palabra</h2>
     </div>
@@ -13,7 +13,12 @@
         </div>
         <div class="mb-3 form-group">
             <label for="cantidadDeLetras" class="form-label">Cantidad de letras</label>
-            <input type="text" class="form-control" id="cantletras" name="cantletras" value="" placeholder="Ingrese la cantidad de letras">
+            <select id="cantletras">
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+            </select>
         </div>
     <div class="mb-3 form-group">
             <input type="button" class="btn btn-primary" onclick="add()" value="Añadir palabra">
