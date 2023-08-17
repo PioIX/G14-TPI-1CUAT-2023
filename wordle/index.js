@@ -120,14 +120,14 @@ app.get('/admin', function(req, res)
 
 app.post('/admin', function(req, res)
 {
-    console.log("Soy un pedido POST", req.query); 
+    console.log("Soy un pedido POST", req.body); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
     res.render('add', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
 app.post('/admin', function(req, res)
 {
-    console.log("Soy un pedido POST", req.query); 
+    console.log("Soy un pedido POST", req.body); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
     res.render('editar', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
@@ -162,10 +162,10 @@ app.post('/addd', function(req, res)
     res.render('login', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
-app.post('/editar', async function(req, res)
+/*app.post('/editar', async function(req, res)
 {
     console.log("Soy un pedido POST", req.body)
-    await MySQL.realizarQuery(`UPDATE Palabras SET ('${req.body.palabra}', ${req.body.cantidad}) = ('${req.body.newpalabra}', ${req.body.newcantidad}) WHERE id_palabras = ${req.body.newidword})`)
+    await MySQL.realizarQuery(`UPDATE Palabras SET Palabras = '${req.body.newpalabra}', cant_letras = ${req.body.newcantidad}) WHERE id_palabras = ${req.body.newidword}`)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.newidword}`);
 
     //Chequeo el largo del vector a ver si tiene datos
@@ -177,7 +177,7 @@ app.post('/editar', async function(req, res)
     else{
         res.send({validar:false})    
     }
-});
+});*/
 
 app.post('/edit', function(req, res)
 {

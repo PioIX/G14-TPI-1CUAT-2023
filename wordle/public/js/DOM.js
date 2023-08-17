@@ -255,7 +255,7 @@ async function putJSON5(data) {
   //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
   try {
-    const responseNEW = await fetch("/delete", {
+    const responseDEL = await fetch("/delete", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -280,7 +280,7 @@ async function putJSON5(data) {
   }
 }
 
-function edit() {
+function borrar() {
   //Leo los datos del input
   let idPalabraDEL = document.getElementById("iddeletepalabra").value
   //Creo un objeto de forma instantanea
@@ -291,4 +291,16 @@ function edit() {
   //data es el objeto que le paso al back
   putJSON5(data)
 
-} 
+}
+
+let palabra = "texto";
+let letras = palabra.length;
+var row = document.getElementById("row1");
+
+function drawSquares(row) {
+  for (let i = 0; i < letras; i++) {
+    row.innerHTML += `<div class="tile"></div>`;
+  }
+}
+
+drawSquares(row);
