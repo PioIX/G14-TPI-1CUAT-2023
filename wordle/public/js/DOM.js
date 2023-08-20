@@ -293,14 +293,7 @@ function borrar() {
 
 }
 
-let palabra = "texto";
-let letras = palabra.length;
-var row = document.getElementById("row1");
 
-function drawSquares(row) {
-  for (let i = 0; i < letras; i++) {
-    row.innerHTML += `<div class="tile"></div>`;
-  }
-}
 
-drawSquares(row);
+
+
