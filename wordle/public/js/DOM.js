@@ -238,7 +238,7 @@ function edit() {
   //Leo los datos del input
   let idPalabraN = document.getElementById("idnewpalabra").value
   let PalabraN = document.getElementById("nuevapalabra").value
-  let CantidadN = document.getElementById("NEWselectcant").value
+  let CantidadN = document.getElementById("Newselectcant").value
   //Creo un objeto de forma instantanea
   let data = {
     newidword: idPalabraN,
