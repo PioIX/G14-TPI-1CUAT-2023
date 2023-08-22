@@ -49,125 +49,138 @@
 
 
 .body{
-    text-align: center;
     background-color: #6aaa64;
-    background-image: url('https://img.freepik.com/foto-gratis/burbujas-agua-aireadas-verdes-gotas-brillantes_23-2148205138.jpg?w=2000');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.notepad {
    
-    #title{
-        font-size: 36px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        text-align: center;
-    }
-    
-    #game-board {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
-      
-      .letter-box {
-        border: 2px solid gray;
-        border-radius: 3px;
-        margin: 2px;
-        font-size: 2.5rem;
-        font-weight: 700;
-        height: 3rem;
-        width: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-transform: uppercase;
-      }
-      
-      .filled-box {
-        border: 2px solid black;
-      }
-      
-      .letter-row {
-        display: flex;
-      }
-
-    .keyboard {
-        display: grid;
-        grid-template-columns: repeat(20, minmax(auto, 1.25em));
-        grid-auto-rows: 3em;
-        gap: .25em;
-        justify-content: center;
-      }
-      
-      .key {
-        font-size: inherit;
-        grid-column: span 2;
-        border: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: hsl(
-          var(--hue, 200),
-          var(--saturation, 1%),
-          calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
-        );
-        color: white;
-        fill: white;
-        text-transform: uppercase;
-        border-radius: .25em;
-        cursor: pointer;
-        user-select: none;
-      }
-      
-      .key.large {
-        grid-column: span 3;
-      }
-      
-      .key > svg {
-        width: 1.75em;
-        height: 1.75em;
-      }
-      
-      .key:hover, .key:focus {
-        --lightness-offset: 10%;
-      }
-      
-      .key.wrong {
-        --lightness: 23%;
-      }
-      
-      .key.wrong-location {
-        --hue: 49;
-        --saturation: 51%;
-        --lightness: 47%;
-      }
-      
-      .key.correct {
-        --hue: 115;
-        --saturation: 29%;
-        --lightness: 43%;
-      }
-      
-    
-    .correct{
-        background-color: #6aaa64;
-        color: white;
-        border-color: white;
-    }
-    
-    .present{
-        background-color: #c9b458;
-        color: white;
-        border-color: white;
-    }
-    
-    .absent{
-        background-color: #787c7e;
-        color: white;
-        border-color: white;
-    }
-    
-
-
+#title{
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
 }
+    
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.square{
+  width: 70px;
+  height: 70px;
+  border:none;
+  background-color: #787c7e;
+  outline: none;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+.result{
+  text-align: center;
+  font-size: 36px;
+}
+
+.button{
+  width: 170px;
+  height: 60px;
+  border-radius: 16px;
+  border: none;
+  background-color: #6aaa64;
+  font-size: 32px;
+  color: #fff;
+}
+
+.button:hover{
+  border: 3px solid #6aaa64;
+  background-color: #fff;
+  color: #6aaa64;
+  cursor: pointer;
+}
+
+.green{
+  background-color: #6aaa64;
+}
+
+.gold{
+  background-color: #c9b458;
+}
+
+.gray{
+  background-color: #787c7e;
+}
+      
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(auto, 1.25em));
+  grid-auto-rows: 3em;
+  gap: .25em;
+  justify-content: center;
+}
+      
+.key {
+  font-size: inherit;
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+  var(--hue, 200),
+  var(--saturation, 1%),
+  calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  fill: white;
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  user-select: none;
+}
+      
+.key.large {
+  grid-column: span 3;
+}
+      
+.key > svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+      
+.key:hover, .key:focus {
+ --lightness-offset: 10%;
+}
+      
+.key.wrong {
+  --lightness: 23%;
+}
+      
+.key.wrong-location {
+  --hue: 49;
+  --saturation: 51%;
+  --lightness: 47%;
+}
+      
+.key.correct {
+  --hue: 115;
+  --saturation: 29%;
+  --lightness: 43%;
+}
+
+    
+
+    
+
+
+

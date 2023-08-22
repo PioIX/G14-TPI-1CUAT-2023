@@ -110,15 +110,6 @@ app.post('/registrero', function(req, res)
 });
 
 
-/*
-app.post('/admin', function(req, res)
-{
-    console.log("Soy un pedido POST", req.body); 
-    let palabras = MySQL.realizarQuery(`SELECT * FROM Palabras`)
-    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('add', {vector: palabras}); 
-}) */
-
 app.get('/add', function(req, res)
 {
     //Petición GET con URL = "/login"

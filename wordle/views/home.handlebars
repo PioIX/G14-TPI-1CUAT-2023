@@ -9,13 +9,48 @@
 </head>
 <body>
     <h1 id="title">Wordle</h1>
-        <hr style="width:100px; margin: auto;" />
+        <hr style="width:100px; margin: auto;">
         <br>
     
-    <div id="game-board">
-
+  <main class="game-board">
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>    
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>
+      <div class="row">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+        <input type="text" maxlength="1" class="square">
+      </div>
     </div>
-    
+  </main>
   <div data-keyboard class="keyboard">
     <button class="key" data-key="Q">Q</button>
     <button class="key" data-key="W">W</button>
@@ -52,6 +87,11 @@
       </svg>
     </button>
 </div>
-
+<div class="result"></div>
+<p>Ganaste</p>
+<div class="mb-3 form-group">
+  <input type="button" class="btn btn-primary" onclick="" value="Siguiente Nivel">
+</div>
+    
 </body>
 </html>
