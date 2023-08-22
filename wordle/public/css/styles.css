@@ -73,6 +73,7 @@
   margin-bottom: 10px;
 }
 
+/* Preguntar porque se mantiene muy ancho el cuadro */
 .square{
   width: 70px;
   height: 70px;
@@ -107,16 +108,16 @@
   cursor: pointer;
 }
 
-.green{
-  background-color: #6aaa64;
+.gray{
+  background-color: #787c7e;
 }
 
 .gold{
   background-color: #c9b458;
 }
 
-.gray{
-  background-color: #787c7e;
+.green{
+  background-color: #6aaa64;
 }
       
 
