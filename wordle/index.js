@@ -121,8 +121,9 @@ app.get('/admin', function(req, res)
 app.post('/admin', function(req, res)
 {
     console.log("Soy un pedido POST", req.body); 
+    let palabras = MySQL.realizarQuery(`SELECT * FROM Palabras`)
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('editar', null); 
+    res.render('delete', {vector: palabras}); 
 })
 
 
@@ -150,11 +151,11 @@ app.post('/addd', function(req, res)
     res.render('login', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
 })
 
-/*
+
 app.post('/editar', async function(req, res)
 {
     console.log("Soy un pedido POST", req.body)
-    await MySQL.realizarQuery(`UPDATE Palabras SET Palabras = '${req.body.newpalabra}', cant_letras = ${req.body.newcantidad}) WHERE id_palabras = ${req.body.newidword}`)
+    await MySQL.realizarQuery(`UPDATE Palabras SET Palabras = '${req.body.newpalabra}', cant_letras = ${req.body.newcantidad} WHERE id_palabras = ${req.body.newidword}`)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.newidword}`);
 
     //Chequeo el largo del vector a ver si tiene datos
@@ -167,7 +168,7 @@ app.post('/editar', async function(req, res)
         res.send({validar:false})    
     }
 });
-*/
+
 
 app.post('/edit', function(req, res)
 {
@@ -179,7 +180,7 @@ app.post('/edit', function(req, res)
 app.post('/delete', async function(req, res)
 {
     console.log("Soy un pedido POST", req.body)
-    await MySQL.realizarQuery(`DELETE * FROM Palabras WHERE id_palabras = ${req.body.deleteidword})`)
+    await MySQL.realizarQuery(`DELETE FROM Palabras WHERE id_palabras = ${req.body.deleteidword}`)
     let respuesta = await MySQL.realizarQuery(`SELECT * FROM Palabras WHERE id_palabras = ${req.body.deleteidword}`);
 
     //Chequeo el largo del vector a ver si tiene datos

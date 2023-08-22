@@ -173,43 +173,13 @@ async function putJSON2(data) {
 
 } 
 
-function searchWord(){
-  let searchword = document.getElementById("searchword").value
-  let divTabla = document.getElementById("divTabla")
-  let stringTable = "";
-  stringTable+= `
-      <table class="table">
-          <thead>
-              <tr>
-              <th scope="col">Id de la palabra</th>
-              <th scope="col">Palabra</th>
-              <th scope="col">Cantidad de letras</th>
-              </tr>
-          </thead>
-          <tbody id="listar">`
-  if (searchword.length >= 3) {
-      for (let i = 0; i < Palabras.length; i++){
-          const element = Palabras[i];
-          let idString = element.Palabras.toString()
-          if (idString.includes(searchword) || element.cant_letras.includes(searchword)){
-              stringTable+=`
-              <tr>
-              <th scope="row">${Palabras[i].id_palabras}</th>
-              <td>${Palabras[i].Palabras}</td>
-              <td>${Palabras[i].cant_letras}</td>
-              </tr>
-          `    
-          }
-      }
-      divTabla.innerHTML = stringTable + "</tbody> </table>"   
-  }
-}
+
 
 async function putJSON4(data) {
   //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
 
   try {
-    const responseNEW = await fetch("/edit", {
+    const responseNEW = await fetch("/editar", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
