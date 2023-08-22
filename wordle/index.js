@@ -122,7 +122,7 @@ app.post('/admin', function(req, res)
 {
     console.log("Soy un pedido POST", req.body); 
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('add', null); 
+    res.render('editar', null); 
 })
 
 
