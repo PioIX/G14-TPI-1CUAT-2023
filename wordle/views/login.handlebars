@@ -22,16 +22,15 @@
     </form>  
 </div>
 <div id="admin" style="display: none">
-    <form action="/admin" method="POST" id="form3" class="container-sm">
         <div class="mb-3 form-group">
         <h2>Usuario Administrador</h2>
         </div>
-        <form action="/add" method="POST" class="container-sm">
+        <form action="/add" method="GET" class="container-sm">
             <div class="mb-3 form-check">
                 <input type="submit" class="btn btn-primary" id="new" value="Añadir palabra">
             </div>
         </form>
-        <form action="/editar" method="POST" class="container-sm">
+        <form action="/editar" method="GET" class="container-sm">
             <div class="mb-3 form-check">
                 <input type="submit" class="btn btn-primary" id="edit" value="Editar palabra">
             </div>
@@ -41,7 +40,6 @@
                 <input type="submit" class="btn btn-primary" id="delete" value="Eliminar palabra">
             </div>
         </form>
-    </form>
 </div>
 
 

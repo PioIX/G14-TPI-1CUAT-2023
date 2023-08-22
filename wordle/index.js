@@ -110,23 +110,39 @@ app.post('/registrero', function(req, res)
 });
 
 
-app.get('/admin', function(req, res)
-{
-    //Petición GET con URL = "/login"
-    console.log("Soy un pedido GET", req.query); 
-    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('admin', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
-});
-
+/*
 app.post('/admin', function(req, res)
 {
     console.log("Soy un pedido POST", req.body); 
     let palabras = MySQL.realizarQuery(`SELECT * FROM Palabras`)
     //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
-    res.render('delete', {vector: palabras}); 
-})
+    res.render('add', {vector: palabras}); 
+}) */
+
+app.get('/add', function(req, res)
+{
+    //Petición GET con URL = "/login"
+    console.log("Soy un pedido GET", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('add', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+});
+
+app.get('/editar', function(req, res)
+{
+    //Petición GET con URL = "/login"
+    console.log("Soy un pedido GET", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('editar', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+});
 
 
+app.get('/delete', function(req, res)
+{
+    //Petición GET con URL = "/login"
+    console.log("Soy un pedido GET", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('delete', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+});
 
 app.post('/add', async function(req, res)
 {
