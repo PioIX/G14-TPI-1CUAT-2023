@@ -284,17 +284,18 @@ async function putJSON6(data = {}) {
   }
 }
 
-function borrar() {
-  //Leo los datos del input
-  let idPalabraDEL = document.getElementById("iddeletepalabra").value
-  //Creo un objeto de forma instantanea
-  let data = {
-    deleteidword: idPalabraDEL
+
+function changeScreenNivel2() {
+  const notepad = document.getElementById("notepad");
+  const nivel2 = document.getElementById("nivel2");
+  if(notepad.style.display !== "none") {
+      notepad.style.display = "none";
+      nivel2.style.display = "";
   }
-
-  //data es el objeto que le paso al back
-  putJSON5(data)
-
+  else {
+      notepad.style.display = "";
+      nivel2.style.display = "none";
+  }
 }
 
 

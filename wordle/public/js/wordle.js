@@ -1,148 +1,95 @@
 let resultElement = document.querySelector('.result')
 let rowid = 1
-let gameBoard = document.querySelector('.game-board')
+let gameboard = document.querySelector('.game-board')
 
-let word = 'hola';
-let wordArray = word.toUpperCase().split('');//Te divide la palabra en arrays
+let word = 'hola'
+let wordArray = word.toUpperCase().split('')
 console.log(wordArray)
 
-var actualRow = document.querySelector('.row-cuadrado');
-console.log(actualRow)
+let actualRow = document.querySelector('.row-cuadrado')
 
-drawSquares(actualRow);
-input(actualRow)
+drawsquares(actualRow);
 
+let focusElement = document.querySelector('.focus')
+focusElement.focus();
 
-addFocus(actualRow)
+let squares = document.querySelectorAll('.square')
+squares = [...squares];
 
-function input(actualRow){
-    let squares = actualRow.querySelectorAll('.square')
-    squares = [...squares]
+let userInput = []
 
-    let userInput = []
-
-    squares.forEach(element =>{
-        element.addEventListener('input', event=>{
-            //Si no se borro 
-            if (event.inputType !== 'deleteContentBackward'){
-                //recoger lo que el usuario ingresa para guardarlo en el vector "userinput"    
-                userInput.push(event.target.value.toUpperCase())
-                if (event.target.nextElementSibling){
-                    event.target.nextElementSibling.focus();
-                }else{
-                    // Crear el array con las letras llenas
-                    let squaresLlenos = actualRow.querySelectorAll('.square')
-                    squaresLlenos = [...squaresField]
-                    let lastFiveSquaresLlenos = squaresLlenos.slice(-5);
-                    let finalUserInput = []
-                    lastFiveSquaresLlenos.forEach(element =>{
-                       finalUserInput.push(element.value.toUpperCase()) 
-                    });
-                    //Comparar elementos para ver si la letra existe pero no esta en la posicion correcta (amarillo)
-                    let ExistePalabras = Existwords(wordArray, finalUserInput)
-                    ExistePalabras.forEach(element =>{
-                        squares[element].classList.add('gold')
-                    })
-                    //Comparar elementos para ver si coinciden (verde)
-                    let elementosCorrectos= compareArrays(wordArray, finalUserInput)
-                    elementosCorrectos.forEach(element => {
-                        squares[element].classList.add('green')
-                    })
-                    //Cuando todas las letras sean iguales
-                    if (elementosCorrectos.length == wordArray.length){
-                        showResult('Ganaste!')
-                        return;
-                    }
-                    //Crear una fila
-                    let actualRow = createRow()
-
-                    if(!actualRow){
-                        return;
-                    }
-
-                    drawSquares(actualRow)
-                    input(actualRow)
-                    addFocus(actualRow)
-                }
-            }else{
-                userInput.pop();
+squares.forEach(element =>{
+    element.addEventListener('input', event=>{
+        //Recoger el ingreso del usuario
+        userInput.push(event.target.value.toUpperCase())
+        console.log(userInput)
+        if(event.target.nextElementSibling){
+            event.target.nextElementSibling.focus();
+        }else{
+            //Si las letras coinciden (verde)
+            let letrasIguales = compareArrays(wordArray, userInput)
+            letrasIguales.forEach(element => {
+                squares[element].classList.add('green')
+            })
+            //Cuando acierta la palabra
+            if (letrasIguales.length == wordArray.length){
+                resultElement.innerHTML = `
+                <p>Ganaste</p>
+                <div class="mb-3 form-group">
+                  <input type="button" class="btn btn-primary" onclick="changeScreenNivel2() " value="Siguiente Nivel">
+                </div>`
             }
-        });
-    })
-}
+            //Si las letras estan pero no en la posicion correcta (amarillo)
+            let letrasEstan = existWords(wordArray, userInput)
+            letrasEstan.forEach(element =>{
+                squares[element].classList.add('gold')
+            })
+            //Crear nueva linea
+            let actualRow = createRow()
+        }
+    });
+})
+
+//Funciones
 
 function compareArrays(array1, array2){
-    let indexIguales = []
+    let elementosIguales = []
     array1.forEach((element, index)=>{
-        if(element == array2[index]){
+        if (element == array2[index]){
             console.log(`En la posicion ${index} si son iguales`)
-            indexIguales.push(index);
-        } else{
+            elementosIguales.push(index)
+        }else{
             console.log(`En la posicion ${index} no son iguales`)
         }
     });
-    return indexIguales;
+    return elementosIguales;
 }
 
-//amarillo
-function Existwords(array1, array2){
-    let LetrasEstan = [];
+function existWords(array1, array2){
+    let existWordsArray = [];
     array2.forEach((element, index)=>{
         if(array1.includes(element)){
-            LetrasEstan.push(index)
+            existWordsArray.push(index)
         }
     });
-    return LetrasEstan;
+    return existWordsArray;
 }
 
 function createRow(){
     rowid++
-    if (rowid <= 6){
-        let newRow = document.createElement('div')
-        newRow.classList.add('row')
-        newRow.setAttribute('id', rowid)
-        gameBoard.appendChild(newRow)
-        return newRow
-    }else{
-        showResult(`Intentalo de nuevo, la respuesta correcta era "${word.toUpperCase()}"`)
-    }
-    
+    let newRow = document.createElement('div');
+    newRow.classList.add('row-cuadrado')
+    newRow.setAttribute('id', rowid)
+    gameboard.appendChild(newRow)
+    return newRow
 }
 
-function drawSquares(actualRow){
-    
+function drawsquares(actualRow){
     wordArray.forEach((item, index) => {
         if (index === 0){
             actualRow.innerHTML += `<input type="text" maxlength="1" class="square focus"></input>`
-        } else {
+        }else{
             actualRow.innerHTML += `<input type="text" maxlength="1" class="square"></input>`
         }
-    });
-}
-
-function addFocus(actualRow){
-    let focusElement = actualRow.querySelector('.focus')
-    focusElement.focus();
-}
-
-function showResult(text){
-    resultElement.innerHTML = `
-                <p>${text}</p>
-                <div class="mb-3 form-group">
-                <input type="button" class="btn btn-primary" onclick="" value="Siguiente Nivel">
-                </div>`
-    let resetBtn = document.querySelector('.button')
-    resetBtn.addEventListener('click', ()=>{
-        location.reload()
     })
 }
-
-async function asignarPalabra(){
-    let response= await postJSON({dificulty:dificulty},"asignarPalabra");
-    wordID=response.id;
-}
-
-asignarPalabra();
-
-
-// Porque fallan los innerhtml
