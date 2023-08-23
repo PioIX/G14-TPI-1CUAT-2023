@@ -6,7 +6,7 @@ let word = 'hola';
 let wordArray = word.toUpperCase().split('');//Te divide la palabra en arrays
 console.log(wordArray)
 
-var actualRow = document.querySelector('.row');
+var actualRow = document.querySelector('.row-cuadrado');
 console.log(actualRow)
 
 drawSquares(actualRow);

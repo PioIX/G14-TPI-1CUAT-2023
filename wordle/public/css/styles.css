@@ -117,7 +117,6 @@
 .typelogin{
   border-radius: 10px;
   font-size: 25px;
-  margin-right: 90px;
 }
 
 .buttonadmin {
@@ -262,13 +261,13 @@
   align-items: center;
 }
 
-.row{
+.row-cuadrado{
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
 }
 
-.row>*{
+.row-cuadrado>*{
   width: 70px;
 }
 
