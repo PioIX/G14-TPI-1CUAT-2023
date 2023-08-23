@@ -136,4 +136,13 @@ function showResult(text){
         location.reload()
     })
 }
+
+async function asignarPalabra(){
+    let response= await postJSON({dificulty:dificulty},"asignarPalabra");
+    wordID=response.id;
+}
+
+asignarPalabra();
+
+
 // Porque fallan los innerhtml

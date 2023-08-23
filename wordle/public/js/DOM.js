@@ -263,6 +263,40 @@ function borrar() {
 
 }
 
+async function putJSON6(data = {}) {
+  //putJSON() es solo el nombre de esta funcion que lo pueden cambiar    
+
+  try {
+    const responseDEL = await fetch("/asignarWord", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    
+    //En result obtengo la respuesta
+    const resultPAL= await responsePAL.json();
+    console.log("Success:", resultPAL);
+    return resultPAL
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+function borrar() {
+  //Leo los datos del input
+  let idPalabraDEL = document.getElementById("iddeletepalabra").value
+  //Creo un objeto de forma instantanea
+  let data = {
+    deleteidword: idPalabraDEL
+  }
+
+  //data es el objeto que le paso al back
+  putJSON5(data)
+
+}
+
 
 
 

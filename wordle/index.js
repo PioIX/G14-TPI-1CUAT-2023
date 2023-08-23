@@ -227,7 +227,32 @@ app.post('/registrer', async function(req, res)
     }
 });
 
+/*app.post("/asignarPalabra", async function(req,res){
+    let wordID = await MySQL.query(`SELECT id FROM Palabras_Ods WHERE longitud=${req.body.cant_letras} ORDER BY RAND();`)
+    res.send(wordID[0]);
+});
 
-     //Renderizo página "home" sin pasar ningún objeto a Handlebars
+app.post("/palabra", async function(req,res){
+    let word = await MySQL.query(`SELECT palabra FROM Palabras_Ods WHERE id=${req.body.wordID};`);
+    res.send(word);
+});
+*/
+/*
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
+app.post("/asignarWord", async function(req,res){
+    let word = await MySQL.query(`SELECT COUNT(Palabras) FROM Palabras ;`);
+    let num = getRandomInt(word)
+    let word2 = await MySQL.query(`SELECT Palabras FROM Palabras where id_palabras=${num} ;`);
 
+    res.send(word2);
+});
+*/
+// app.post('/palabraRandom',async function(req, res) {
+//     let palabra = await MySQL.realizarQuery(`SELECT nombre_palabra FROM palabras`)
+//     let elementoRandom =  Math.floor(Math.random() * palabra.length)
+//     let palabraAleatoria = palabra[elementoRandom]
+//     res.send({randomWord : palabraAleatoria})
+// });
