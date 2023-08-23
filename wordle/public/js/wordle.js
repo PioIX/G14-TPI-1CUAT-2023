@@ -26,21 +26,19 @@ function input(actualRow){
             if (event.inputType !== 'deleteContentBackward'){
                 //recoger lo que el usuario ingresa para guardarlo en el vector "userinput"    
                 userInput.push(event.target.value.toUpperCase())
-                console.log(userInput)
                 if (event.target.nextElementSibling){
                     event.target.nextElementSibling.focus();
                 }else{
                     // Crear el array con las letras llenas
                     let squaresLlenos = actualRow.querySelectorAll('.square')
                     squaresLlenos = [...squaresField]
+                    let lastFiveSquaresLlenos = squaresLlenos.slice(-5);
                     let finalUserInput = []
                     squaresLlenos.forEach(element =>{
                        finalUserInput.push(element.value.toUpperCase()) 
                     });
-                    console.log(finalUserInput)
                     //Comparar elementos para ver si la letra existe pero no esta en la posicion correcta (amarillo)
                     let ExistePalabras = Existwords(wordArray, finalUserInput)
-                    console.log(ExistePalabras)
                     ExistePalabras.forEach(element =>{
                         squares[element].classList.add('gold')
                     })
@@ -68,7 +66,6 @@ function input(actualRow){
             }else{
                 userInput.pop();
             }
-            console.log(userInput)
         });
     })
 }
@@ -122,7 +119,6 @@ function drawSquares(actualRow){
 
 function addFocus(actualRow){
     let focusElement = actualRow.querySelector('.focus')
-    console.log(focusElement)
     focusElement.focus();
 }
 
