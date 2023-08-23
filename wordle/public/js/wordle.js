@@ -35,7 +35,7 @@ function input(actualRow){
                     squaresLlenos = [...squaresField]
                     let lastFiveSquaresLlenos = squaresLlenos.slice(-5);
                     let finalUserInput = []
-                    squaresLlenos.forEach(element =>{
+                    lastFiveSquaresLlenos.forEach(element =>{
                        finalUserInput.push(element.value.toUpperCase()) 
                     });
                     //Comparar elementos para ver si la letra existe pero no esta en la posicion correcta (amarillo)
