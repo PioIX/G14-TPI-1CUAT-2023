@@ -5,19 +5,19 @@
             <h2>Iniciar sesion</h2>
         <div class="mb-3 form-group">
             <label for="usuarioId" class="form-label"></label>
-            <input type="text" class="form-control" id="usuarioId" name="usuario" value="" placeholder="Usuario">
+            <input type="text" class="typelogin" id="usuarioId" name="usuario" value="" placeholder="Usuario">
         </div>
         <div class="mb-3 form-group">
             <label for="passwordId" class="form-label"></label>
-            <input type="password" class="form-control" id="passwordId" placeholder="Contraseña">
+            <input type="password" class="typelogin" id="passwordId" placeholder="Contraseña">
         </div>
         <div class="mb-3 form-check">
-            <input type="button" class="btn btn-primary" onclick="login()" value="Ingresar">
+            <input type="button" class="buttonlogin" onclick="login()" value="Ingresar">
         </div>
     </form> 
     <form action="/registrer" method="GET" class="container-sm">
         <div class="mb-3 form-check">
-            <input type="submit" class="btn btn-primary" value="Registrarse">
+            <input type="submit" class="buttonlogin" value="Registrarse">
         </div>
     </form>  
 </div>
@@ -27,17 +27,17 @@
         </div>
         <form action="/add" method="GET" class="container-sm">
             <div class="mb-3 form-check">
-                <input type="submit" class="btn btn-primary" id="new" value="Añadir palabra">
+                <input type="submit" class="buttonadmin" id="newbutton" value="Añadir palabra">
             </div>
         </form>
         <form action="/editar" method="GET" class="container-sm">
             <div class="mb-3 form-check">
-                <input type="submit" class="btn btn-primary" id="edit" value="Editar palabra">
+                <input type="submit" class="buttonadmin" id="editbutton" value="Editar palabra">
             </div>
         </form>
         <form action="/delete" method="GET" class="container-sm">
-            <div class="mb-3 form-group">
-                <input type="submit" class="btn btn-primary" id="delete" value="Eliminar palabra">
+            <div class="mb-3 form-ckeck">
+                <input type="submit" class="buttonadmin" id="deletebutton" value="Eliminar palabra">
             </div>
         </form>
 </div>
