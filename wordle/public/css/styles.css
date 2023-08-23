@@ -116,7 +116,8 @@
 
 .typelogin{
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 25px;
+  margin-right: 90px;
 }
 
 .buttonadmin {
@@ -246,6 +247,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
    
 #title{
   font-size: 36px;
@@ -266,14 +268,18 @@
   margin-bottom: 10px;
 }
 
+.row>*{
+  width: 70px;
+}
+
 /* Preguntar porque se mantiene muy ancho el cuadro */
 .square{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border:none;
   background-color: #787c7e;
   outline: none;
-  font-size: 50px;
+  font-size: 40px;
   text-transform: uppercase;
   color: #fff;
   text-align: center;

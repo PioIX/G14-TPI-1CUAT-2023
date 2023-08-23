@@ -3,10 +3,11 @@ let rowid = 1
 let gameBoard = document.querySelector('.game-board')
 
 let word = 'hola';
-let wordArray = word.toUpperCase().split('');
+let wordArray = word.toUpperCase().split('');//Te divide la palabra en arrays
 console.log(wordArray)
 
-let actualRow = document.querySelector('.row');
+var actualRow = document.querySelector('.row');
+console.log(actualRow)
 
 drawSquares(actualRow);
 input(actualRow)
@@ -83,6 +84,7 @@ function compareArrays(array1, array2){
     return indexIguales;
 }
 
+//amarillo
 function Existwords(array1, array2){
     let LetrasEstan = [];
     array2.forEach((element, index)=>{
@@ -108,6 +110,7 @@ function createRow(){
 }
 
 function drawSquares(actualRow){
+    
     wordArray.forEach((item, index) => {
         if (index === 0){
             actualRow.innerHTML += `<input type="text" maxlength="1" class="square focus"></input>`
