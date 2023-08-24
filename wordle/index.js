@@ -250,9 +250,17 @@ app.post("/asignarWord", async function(req,res){
     res.send(word2);
 });
 */
-// app.post('/palabraRandom',async function(req, res) {
-//     let palabra = await MySQL.realizarQuery(`SELECT nombre_palabra FROM palabras`)
-//     let elementoRandom =  Math.floor(Math.random() * palabra.length)
-//     let palabraAleatoria = palabra[elementoRandom]
+
+//  app.post('/palabraRandomNivel1',async function(req, res) {
+//      let palabra = await MySQL.realizarQuery(`SELECT Palabras FROM Palabras WHERE cant_letras = 4`)
+//      let elementoRandom =  Math.floor(Math.random() * palabra.length)
+//      let palabraAleatoria = palabra[elementoRandom]
 //     res.send({randomWord : palabraAleatoria})
-// });
+//  });
+
+
+
+app.post("/asignarPalabra", async function(req,res){
+    let wordID = await MySQL.query(`SELECT id_palabras FROM Palabras WHERE cant_letras=${req.body.cant_letras} ORDER BY RAND();`)
+    res.send(wordID[0]);
+});
