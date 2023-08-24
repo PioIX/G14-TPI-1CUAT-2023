@@ -227,6 +227,7 @@ app.post('/registrer', async function(req, res)
     }
 });
 
+
 /*app.post("/asignarPalabra", async function(req,res){
     let wordID = await MySQL.query(`SELECT id FROM Palabras_Ods WHERE longitud=${req.body.cant_letras} ORDER BY RAND();`)
     res.send(wordID[0]);

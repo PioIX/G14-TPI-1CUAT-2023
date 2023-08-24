@@ -10,7 +10,7 @@ var wordID;
 
 // asignarPalabra();
 
-let word = 'hola'
+let word = 'chau'
 let wordArray = word.toUpperCase().split('')
 
 let actualRow = document.querySelector('.row-cuadrado')

@@ -24,6 +24,19 @@ function changeScreenadmin() {
     }
 }
 
+function changeScreenNivel2() {
+  const notepad = document.getElementById("notepad");
+  const nivel2 = document.getElementById("nivel2");
+  if(notepad.style.display !== "none") {
+      notepad.style.display = "none";
+      nivel2.style.display = "";
+  }
+  else {
+      notepad.style.display = "";
+      nivel2.style.display = "none";
+  }
+}
+
 
 
 async function putJSON(data) {
@@ -264,18 +277,7 @@ function borrar() {
 }
 
 
-function changeScreenNivel2() {
-  const notepad = document.getElementById("notepad");
-  const nivel2 = document.getElementById("nivel2");
-  if(notepad.style.display !== "none") {
-      notepad.style.display = "none";
-      nivel2.style.display = "";
-  }
-  else {
-      notepad.style.display = "";
-      nivel2.style.display = "none";
-  }
-}
+
 
 
 
