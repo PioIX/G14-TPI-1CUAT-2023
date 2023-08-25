@@ -1,14 +1,7 @@
 let resultElement = document.querySelector('.result')
 let rowid = 1
 let gameboard = document.querySelector('.game-board')
-var wordID;
 
-// async function asignarPalabra(){
-//     let response= await postJSON({cant_letras:cant_letras},"asignarPalabra");
-//     wordID=response.id;
-// }
-
-// asignarPalabra();
 
 let word = 'chau'
 let wordArray = word.toUpperCase().split('')

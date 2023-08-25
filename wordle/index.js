@@ -227,18 +227,22 @@ app.post('/registrer', async function(req, res)
     }
 });
 
+app.post('/home', function(req, res)
+{
+    console.log("Soy un pedido POST", req.query); 
+    //En req.query vamos a obtener el objeto con los parámetros enviados desde el frontend por método GET
+    res.render('nivel2', null); //Renderizo página "home" sin pasar ningún objeto a Handlebars
+})
 
-/*app.post("/asignarPalabra", async function(req,res){
-    let wordID = await MySQL.query(`SELECT id FROM Palabras_Ods WHERE longitud=${req.body.cant_letras} ORDER BY RAND();`)
-    res.send(wordID[0]);
-});
 
+
+/*
 app.post("/palabra", async function(req,res){
     let word = await MySQL.query(`SELECT palabra FROM Palabras_Ods WHERE id=${req.body.wordID};`);
     res.send(word);
 });
-*/
-/*
+
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -250,18 +254,21 @@ app.post("/asignarWord", async function(req,res){
 
     res.send(word2);
 });
-*/
-
-//  app.post('/palabraRandomNivel1',async function(req, res) {
-//      let palabra = await MySQL.realizarQuery(`SELECT Palabras FROM Palabras WHERE cant_letras = 4`)
-//      let elementoRandom =  Math.floor(Math.random() * palabra.length)
-//      let palabraAleatoria = palabra[elementoRandom]
-//     res.send({randomWord : palabraAleatoria})
-//  });
 
 
-
-app.post("/asignarPalabra", async function(req,res){
-    let wordID = await MySQL.query(`SELECT id_palabras FROM Palabras WHERE cant_letras=${req.body.cant_letras} ORDER BY RAND();`)
+app.post("/asignarPalabraNivel1", async function(req,res){
+    let wordID = await MySQL.query(`SELECT id_palabras FROM Palabras WHERE cant_letras= 4  ORDER BY RAND();`)
     res.send(wordID[0]);
 });
+*/
+
+/*
+var wordID;
+
+// async function asignarPalabra(){
+//     let response= await postJSON({cant_letras:cant_letras},"asignarPalabra");
+//     wordID=response.id;
+// }
+
+// asignarPalabra();
+*/
