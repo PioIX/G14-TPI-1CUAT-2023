@@ -5,6 +5,7 @@ let gameboard = document.querySelector('.game-board')
 
 let word = 'chau'
 let wordArray = word.toUpperCase().split('')
+console.log(wordArray)
 
 let actualRow = document.querySelector('.row-cuadrado')
 

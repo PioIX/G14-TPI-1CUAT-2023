@@ -276,6 +276,25 @@ function borrar() {
 
 }
 
+palabraElegida = ""
+
+async function conseguirPalabra() {
+  try {
+    const response = await fetch("/palabraRandom1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    
+    //En result obtengo la respuesta
+    const result = await response.json();
+    palabraElegida = result.randomWord
+    console.log(palabraElegida)
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
 
 
 
