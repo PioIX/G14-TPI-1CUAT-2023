@@ -11,6 +11,7 @@ function getDni() {
     return document.getElementById("dni").value;
 }
 
+
 function changeScreenadmin() {
     const admin = document.getElementById("admin");
     const login = document.getElementById("login");
@@ -23,6 +24,7 @@ function changeScreenadmin() {
         login.style.display = "none";
     }
 }
+
 
 function changeScreenNivel2() {
   const notepad = document.getElementById("notepad");

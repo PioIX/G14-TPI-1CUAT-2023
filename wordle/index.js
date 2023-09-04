@@ -237,3 +237,8 @@ app.post('/palabraRandom1',async function(req, res) {
     
 });
 
+app.get('/home', function(req, res)
+{
+    console.log("Soy un pedido GET", req.query);
+    res.render('nivel2', null)
+});
