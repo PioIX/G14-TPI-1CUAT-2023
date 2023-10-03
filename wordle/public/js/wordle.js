@@ -3,7 +3,7 @@ let rowid = 1
 let gameboard = document.querySelector('.game-board')
 
 
-let word = 'hola'
+let word = 'genero'
 let wordArray = word.toUpperCase().split('')
 console.log(wordArray)
 
