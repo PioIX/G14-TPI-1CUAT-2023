@@ -54,7 +54,8 @@ function input(actualRow){
                     })
                     //Cuando acierta la palabra
                     if (letrasIguales.length == wordArray.length){
-                        resultElement.innerHTML = `<p>Ganaste!</p>
+                        resultElement.innerHTML = `<p>Ganaste!
+                        Una de las ODS es la igualdad de genero que busca el hecho de que no hayan mas desigualdades entre hombres y mujeres en cuanto a la brecha salarial, la participacion politica o la violencia de genero</p>
                         <div class="mb-3 form-group">
                         <input type="button" class="btn btn-primary" onclick="changeScreenNivel2()" value="Siguiente Nivel">
                         </div>`
